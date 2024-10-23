@@ -1,4 +1,4 @@
-# Something_Awesome_Project
+# Something Awesome Project
 Capture the Flag Writeups for HackTheBox Exercises
 
 # Tracks:
