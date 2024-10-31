@@ -16,4 +16,4 @@ mode. Running the program, we can see our input stored in the eax register. We c
 in the edx register - potentially this is our password? Running this string through the checker, we indeed get the "Congratulations" message!
 This gives us our flag.
 
-!(break.png)
+![](break.png)
