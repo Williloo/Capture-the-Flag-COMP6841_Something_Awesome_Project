@@ -46,3 +46,11 @@ fact that we know the first 3 bytes of the output! Since we are looking for a Ha
 From here, we can reverse engineer the bytes: we want key[0] ^ 00111111 to equal 'H', which is 01001000. Because the operation is exclusive or, 
 we want the key to be 01110111, which is 'w'. We can do a similar process for the other 2 characters of the key to get the key 'w0w'.
 Typing this into the input, we can get the flag!
+
+## My Takeaways
+I found this to be a really fun exercise, especially the component which required us to solve some XOR operations. The binary was pretty
+straightforward, but I was initially a bit hesitant and scared by the XOR operation, as it felt like some cryptographic encryption that I 
+couldn't or wasn't supposed to solve. Instead, I tried ltrace and other techniques such as breakpoints in gdb etc to try to intercept the 
+encryption. But when they failed, I thought "the encryption doesn't look thaaaat complicated right?", and decided to try my hand at decrypting
+the encryption process. A quick search also told me that the XOR operation was very reversible. Using all this information, and realising that
+the key was only 3 digits (perfectly aligned with HTB), I tried the decryption and got the result pretty easily.
