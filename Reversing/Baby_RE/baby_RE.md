@@ -49,3 +49,9 @@ and see if there's another approach:
 000011ec      return 0
 ```
 The flag is kinda just hardcoded...but we can take it anyway!
+
+## My Takeaways
+My biggest takeaway from this challenge was ltrace. This being my first Reversing challenge, I sought help from [this guiude](https://swanandx.github.io/blog/posts/re/ctfs/)
+to reveresing challenges, which introduced me to ltrace. My first instinct was to reverse the binary using Binary Ninja, which led me to the flag.
+But the hint on the challenge said that there were multiple ways to approach this challenge, so I thought to explore some other ways, which may benefit
+me down the line. That was when I thought to look into tips for reversing catgeory challenges, thereby finding the site.
