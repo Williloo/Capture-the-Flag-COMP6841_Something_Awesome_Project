@@ -92,3 +92,14 @@ Now we need some secret key (see function 2). The function sets flag to be equal
 Now, if we set a break point before the if clause again, we can edit the code so flag is true again. Alternatively, we can also read that
 the secret passkey is "ThisIsAReallyReallySecureKeyButYouCanReadItFromSourceSoItSucks". Either way, we can continue the program and get the
 flag which is printed out successfully!
+
+## My Takeaways
+My biggest takeaway from this exercise was to always seek the right tools for the occasion. I originally decompiled the challeng in Binary
+Ninja, and even in Pseudo C display, the code was still basically assembly. I spent a lot of time trying to decrypt and understand the code
+in assembly, but it was quite difficult tracking the registers and that led to a lot of dead ends.
+Eventually, I thought to get more information about the file to maybe help me decode its meaning. This led me to running file, discovering it
+was a .NET assembly, as eventually finding DNSpy. This tool greatly assisted me due to its debugging features, and proved to be the perfect tool
+to edit variables for this task. 
+Before I discovered DNSpy, I tried multiple other disassemblers, found throughout [this post](https://stackoverflow.com/questions/179741/how-do-i-decompile-a-net-exe-into-readable-c-sharp-source-code), 
+which was my source. A lot of them weren't easy to operate, and didn't have debugging features which I wanted. This again goes back to my lesson
+of finding the right tools for the job, which in this case was DnSpy.
