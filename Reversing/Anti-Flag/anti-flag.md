@@ -91,7 +91,7 @@ pwndbg> piebase
 Calculated VA from /mnt/c/users/willi/Downloads/anti_flag = 0x555555554000
 ```
 So now we know we want to jump to the function which is located at 0x555555555525. But where should we set a breakpoint? It should be before the ptrace
-comparison, because that will ensure we don't enter into the wrong if condition, so our current location is fine. Let's use tthe jump function:
+comparison, because that will ensure we don't enter into the wrong if condition, so our current location is fine. Let's use the jump function:
 ```
 pwndbg> jump *0x555555555525
 Continuing at 0x555555555525.
@@ -100,3 +100,14 @@ HTB{y0u_trac3_m3_g00d!!!}
 pwndbg>
 ```
 And there! We got the flag!
+
+## My Takeaways
+The first takeaway I have from this exercise is to inspect the original binary code. Disassemblers may be optimised to not display code branches
+that aren't ever executed, however for reversing challenges they may be important as they could be hiding some secret. The lowest, disassembly
+code will not face this problem, and from them we can find the results we want.
+My next takeaway came when I was attempting to call the hidden function. My initial thought was some binary exploitation techniques, where I could
+alter the return address, but there was nowhere to input anything. However, some google searches led me to a new GDB feature - the jump function 
+([found here](https://www.sans.org/blog/using-gdb-to-call-random-functions/)). 
+My final takeaway was in locating the address of the function I wanted to call. To do this, I used the piebase command, which I found on a 
+[pwngdb cheatsheet](https://pwndbg.re/CheatSheet.pdf). I already knew the offset of my desired line of code from the start of the program, so 
+I just wanted to find some function that told me where my code execution started, which a series of Google searches led me to.
