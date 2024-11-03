@@ -59,3 +59,8 @@ printf("I said, you can't c me!\n"I said, you can't c me!
 +++ exited (status 0) +++
 ```
 We can see that the string "wh00ps!_y0u_d1d_c_m3" is stored in var_28, and using that, we can plug it into the input of ./auth to get the flag.
+
+## My Takeaways
+There was little to learn from this challenge. I had already used ltrace in Baby RE, and as there was a strcmp function in this case, 
+it was an easy application of my pre-existing knowledge. However, it was reassuring to valildate that the knowledge and experience I was 
+accumulating were not being forgotten.
