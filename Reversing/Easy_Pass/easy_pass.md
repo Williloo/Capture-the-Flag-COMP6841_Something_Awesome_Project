@@ -12,8 +12,14 @@ can see that there is a branch between this path, and another path which prints 
 password checker function!
 
 Let's run a breakpoint at 0x454131, just before the branching, and see if we can get any valuee out of the registers using debugger
-mode. Running the program, we can see our input stored in the eax register. We can notice another string as well! 'Fortran!' is stored
+mode. Running the program, we can see our input stored in the eax register. We can notice another string as well! 'fortran!' is stored
 in the edx register - potentially this is our password? Running this string through the checker, we indeed get the "Congratulations" message!
 This gives us our flag.
 
 ![](break.png)
+
+## My Takeaways
+I learnt a lot about using Binary Ninja from this challenge. Rather than just finding the main function as usual and reading the code,
+I utilised the map feature to understand the branched code better, and also the search feature to orientate myself in the code. Also from
+digging around, I found that Binary Ninja had a debugging mode that allowed me to set breakpoints and run the program, which I was able to
+utilise for this exercise. The debugging mode also let me peek inside of registers, which ultimately got me the passcode for this exercise. 
